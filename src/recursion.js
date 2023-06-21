@@ -7,12 +7,31 @@
 // Example: 5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5); // 120
 var factorial = function(n) {
+  if (n < 0) {
+    return null;
+  }
+  else if (n === 0) {
+    return 1;
+  }
+  else if (n === 1) {
+    return n;
+  }
+  return n * factorial(n - 1);
 };
+// console.log(factorial(5));
 
 // 2. Compute the sum of an array of integers.
-// sum([1,2,3,4,5,6]); // 21
+// (sum([1,2,3,4,5,6]); // 21)
 var sum = function(array) {
-};
+    
+    // console.log((array.length === 0) ? 0 : array[0] + sum(array.slice(1)));
+    return(array.length === 0) ? 0 : array[0] + sum(array.slice(1));
+}
+
+var sum = (array) => (array.length === 0) ? 0 : array[0] + sum(array.slice(1));
+
+// console.log(sum([1,2,3,4,5,6]));
+
 
 // 3. Sum all numbers in an array containing nested arrays.
 // arraySum([1,[2,3],[[4]],5]); // 15
@@ -55,6 +74,14 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  var n = str.length;
+
+  // An empty string is
+  // considered as palindrome
+  if (n == 0)
+      return true;
+
+  return isPalRec(str, 0, n - 1);
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -90,7 +117,7 @@ var gcd = function(x, y) {
 var compareStr = function(str1, str2) {
 };
 
-// 16. Write a function that accepts a string and creates an array where each letter
+// 16. Write a function that accepts a string and creates an array where each varter
 // occupies an index of the array.
 var createArray = function(str) {
 };
@@ -165,7 +192,7 @@ var nthFibo = function(n) {
 var capitalizeWords = function(array) {
 };
 
-// 28. Given an array of strings, capitalize the first letter of each index.
+// 28. Given an array of strings, capitalize the first varter of each index.
 // capitalizeFirst(['car','poop','banana']); // ['Car','Poop','Banana']
 var capitalizeFirst = function(array) {
 };
@@ -187,9 +214,9 @@ var nestedEvenSum = function(obj) {
 var flatten = function(array) {
 };
 
-// 31. Given a string, return an object containing tallies of each letter.
-// letterTally('potato'); // {p:1, o:2, t:2, a:1}
-var letterTally = function(str, obj) {
+// 31. Given a string, return an object containing tallies of each varter.
+// varterTally('potato'); // {p:1, o:2, t:2, a:1}
+var varterTally = function(str, obj) {
 };
 
 // 32. Eliminate consecutive duplicates in a list. If the list contains repeated
@@ -252,3 +279,25 @@ var mergeSort = function(array) {
 // obj1 === obj2 // false
 var clone = function(input) {
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
